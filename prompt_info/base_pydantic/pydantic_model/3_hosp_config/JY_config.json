@@ -1,0 +1,115 @@
+{
+    "local_inference": {
+        "model_config": {
+            "model_path": "/data/hf_cache/models/Qwen/Qwen3-32B",
+            "base_url": "http://localhost:8085/v1",
+            "api_key": "token-abc123",
+            "model_name": "/data/hf_cache/models/Qwen/Qwen3-32B",
+            "temperature": 0.0,
+            "top_p": 0.9,
+            "max_token_len": 32768,
+            "do_sample": true,
+            "top_k": 0,
+            "use_beam_search": false,
+            "device_map": "4,5,6,7",
+            "dtype": "auto"
+        },
+        "data": {
+            "transfer_data_info": {
+                "病理检查": {
+                    "entity_inferecne_path": "/home/xuhaitong/projects/temp/transfer_CRF/data/infrence_data/jy/inference_output_50/jy_2048_blzd.json",
+                    "need_grouped_cde_dict": {
+                        "病理_解剖学部位描述信息": [
+                            "其他累及部位",
+                            "原发灶大小分类",
+                            "口腔病灶部位(ICD-O-3诊断部位)",
+                            "浸润深度（DOI）",
+                            "累及部位",
+                            "解剖学方位",
+                            "解剖学部位"
+                        ],
+                        "送检淋巴结": [
+                            "淋巴结总数",
+                            "淋巴结转移包膜外ENE(+)标志",
+                            "淋巴结部位",
+                            "送检淋巴结区域",
+                            "送检淋巴结方位",
+                            "阳性淋巴结总数",
+                            "阳性淋巴结最大直径"
+                        ],
+                        "淋巴结转移包膜外": [
+                            "淋巴结转移包膜外ENE(+)区域",
+                            "淋巴结转移包膜外ENE(+)方位"
+                        ]
+                    }
+                },
+                "个人史": {
+                    "entity_inferecne_path": "/home/xuhaitong/projects/temp/transfer_CRF/data/infrence_data/jy/inference_output_50/jy_2048_grs.json",
+                    "need_grouped_cde_dict": {}
+                },
+                "婚育史": {
+                    "entity_inferecne_path": "/home/xuhaitong/projects/temp/transfer_CRF/data/infrence_data/jy/inference_output_50/jy_2048_hys.json",
+                    "need_grouped_cde_dict": {}
+                },
+                "既往史": {
+                    "entity_inferecne_path": "/home/xuhaitong/projects/temp/transfer_CRF/data/infrence_data/jy/inference_output_50/jy_2048_jws.json",
+                    "need_grouped_cde_dict": {}
+                },
+                "手术记录": {
+                    "entity_inferecne_path": "/home/xuhaitong/projects/temp/transfer_CRF/data/infrence_data/jy/inference_output_50/jy_2048_ssjl.json",
+                    "need_grouped_cde_dict": {}
+                },
+                "现病史": {
+                    "entity_inferecne_path": "/home/xuhaitong/projects/temp/transfer_CRF/data/infrence_data/jy/inference_output_50/jy_2048_xbs.json",
+                    "need_grouped_cde_dict": {}
+                },
+                "影像检查": {
+                    "entity_inferecne_path": "/home/xuhaitong/projects/temp/transfer_CRF/data/infrence_data/jy/inference_output_50/jy_2048_yxjc.json",
+                    "need_grouped_cde_dict": {
+                        "影像_解剖学部位描述信息": [
+                            "其他累及部位",
+                            "影像检查类型代码",
+                            "口腔病灶部位(ICD-O-3诊断部位)",
+                            "原发灶大小分类",
+                            "累及部位",
+                            "解剖学方位",
+                            "解剖学部位"
+                        ],
+                        "影像_阳性淋巴结描述信息": [
+                            "影像检查类型代码",
+                            "淋巴结总数",
+                            "淋巴结转移包膜外ENE(+)标志",
+                            "淋巴结部位",
+                            "送检淋巴结区域",
+                            "送检淋巴结方位",
+                            "阳性淋巴结总数",
+                            "阳性淋巴结最大直径"
+                        ]
+                    }
+                },
+                "专科检查": {
+                    "entity_inferecne_path": "/home/xuhaitong/projects/temp/transfer_CRF/data/infrence_data/jy/inference_output_50/jy_2048_zkjc.json",
+                    "need_grouped_cde_dict": {
+                        "专科_解剖学部位描述信息": [
+                            "口腔病灶大小",
+                            "口腔病灶部位(ICD-O-3诊断部位)",
+                            "解剖学方位",
+                            "解剖学部位"
+                        ],
+                        "专科_阳性淋巴结描述信息": [
+                            "淋巴结总数",
+                            "淋巴结部位",
+                            "送检淋巴结区域",
+                            "送检淋巴结方位",
+                            "阳性淋巴结总数",
+                            "阳性淋巴结最大直径"
+                        ]
+                    }
+                }
+            },
+            "label_mapping_path": "/home/xuhaitong/projects/temp/transfer_entity2CDEs/data/Mapping_file/jy/九院_标签.csv",
+            "CReDEs_mapping_path": "/home/xuhaitong/projects/temp/transfer_entity2CDEs/data/Mapping_file/jy/九院1203_remove_unknow.csv"
+        },
+        "store_transfer_data_path_dir": "/home/xuhaitong/projects/temp/transfer_CRF/output/jy/test/jy_standard_50_v2"
+    }
+}

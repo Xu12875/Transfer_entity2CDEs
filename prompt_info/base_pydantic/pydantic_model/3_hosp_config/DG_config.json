@@ -1,0 +1,78 @@
+{
+    "local_inference": {
+        "model_config": {
+            "model_path": "/data/hf_cache/models/Qwen/Qwen3-32B",
+            "base_url": "http://localhost:8085/v1",
+            "api_key": "token-abc123",
+            "model_name": "/data/hf_cache/models/Qwen/Qwen3-32B",
+            "temperature": 0.0,
+            "top_p": 0.9,
+            "max_token_len": 32768,
+            "do_sample": true,
+            "top_k": 0,
+            "use_beam_search": false,
+            "device_map": "4,5,6,7",
+            "dtype": "auto"
+        },
+        "data": {
+            "transfer_data_info": {
+                "病理诊断": {
+                    "entity_inferecne_path": "/home/xuhaitong/projects/temp/transfer_CRF/data/infrence_data/dg/v2/inference_output_50/dg_2048_blzd.json",
+                    "need_grouped_cde_dict": {
+                        "肝脏标本": [
+                            "切除肝脏总大小横径",
+                            "切除肝脏总大小纵径"
+                        ],
+                        "肿瘤大小": [
+                            "瘤灶横径",
+                            "瘤灶纵径"
+                        ]
+                    }
+                },
+                "检查": {
+                    "entity_inferecne_path": "/home/xuhaitong/projects/temp/transfer_CRF/data/infrence_data/dg/v2/inference_output_50/dg_2048_jc.json",
+                    "need_grouped_cde_dict": {
+                        "瘤灶大小": [
+                            "瘤灶横径",
+                            "瘤灶纵径"
+                        ]
+                    }
+                },
+                "介入治疗": {
+                    "entity_inferecne_path": "/home/xuhaitong/projects/temp/transfer_CRF/data/infrence_data/dg/v2/inference_output_50/dg_2048_jrzl.json",
+                    "need_grouped_cde_dict": {}
+                },
+                "手术记录": {
+                    "entity_inferecne_path": "/home/xuhaitong/projects/temp/transfer_CRF/data/infrence_data/dg/v2/inference_output_50/dg_2048_ssjl.json",
+                    "need_grouped_cde_dict": {}
+                },
+                "日常病程": {
+                    "entity_inferecne_path": "/home/xuhaitong/projects/temp/transfer_CRF/data/infrence_data/dg/v2/inference_output_50/dg_2048_rcbc.json",
+                    "need_grouped_cde_dict": {}
+                },
+                "入院记录": {
+                    "entity_inferecne_path": "/home/xuhaitong/projects/temp/transfer_CRF/data/infrence_data/dg/v2/inference_output_50/dg_2048_ryjl.json",
+                    "need_grouped_cde_dict": {
+                        "抗病毒治疗": [
+                            "抗病毒治疗",
+                            "抗病毒治疗停止时间",
+                            "抗病毒治疗开始时间"
+                        ],
+                        "瘤灶大小": [
+                            "瘤灶横径",
+                            "瘤灶纵径"
+                        ],
+                        "辅助检查": [
+                            "检查报告的检查类型",
+                            "辅助检查日期",
+                            "辅助检查结果"
+                        ]
+                    }
+                }
+            },
+            "label_mapping_path": "/home/xuhaitong/projects/temp/transfer_entity2CDEs/data/Mapping_file/dg/东肝_标签.csv",
+            "CReDEs_mapping_path": "/home/xuhaitong/projects/temp/transfer_entity2CDEs/data/Mapping_file/dg/东肝1203_remov_unknown.csv"
+        },
+        "store_transfer_data_path_dir": "/home/xuhaitong/projects/temp/transfer_CRF/output/dg/test/dg_50_standard_v4"
+    }
+}

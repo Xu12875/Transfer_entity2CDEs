@@ -1,0 +1,244 @@
+{
+    "local_inference": {
+        "model_config": {
+            "model_path": "/data/hf_cache/models/Qwen/Qwen3-32B",
+            "base_url": "http://localhost:8085/v1",
+            "api_key": "token-abc123",
+            "model_name": "/data/hf_cache/models/Qwen/Qwen3-32B",
+            "temperature": 0.0,
+            "top_p": 0.9,
+            "max_token_len": 32768,
+            "do_sample": true,
+            "top_k": 0,
+            "use_beam_search": false,
+            "device_map": "4,5,6,7",
+            "dtype": "auto"
+        },
+        "data": {
+            "transfer_data_info": {
+                "既往史": {
+                    "entity_inferecne_path": "/home/xuhaitong/projects/temp/transfer_entity2CDEs/data/infrence_data/xk/inference_data/new_inference_data_50/jws.json",
+                    "need_grouped_cde_dict": {
+                        "疾病组": [
+                            "疾病名称",
+                            "疾病开始日期",
+                            "疾病结束日期",
+                            "疾病持续",
+                            "疾病持续时间",
+                            "治疗名称",
+                            "是否进行手术",
+                            "围术期手术日期",
+                            "手术名称",
+                            "实际执行术式"
+                        ]
+                    }
+                },
+                "现病史": {
+                    "entity_inferecne_path": "/home/xuhaitong/projects/temp/transfer_entity2CDEs/data/infrence_data/xk/inference_data/new_inference_data_50/xbs.json",
+                    "need_grouped_cde_dict": {
+                        "疾病": [
+                            "疾病名称",
+                            "疾病开始日期",
+                            "疾病持续",
+                            "疾病持续时长（月）",
+                            "疾病结束日期"
+                        ],
+                        "肺癌分期": [
+                            "非小细胞肺癌临床分期",
+                            "非小细胞肺癌TNM 分期_原发肿瘤(T)",
+                            "非小细胞肺癌TNM 分期_N 区域淋巴结",
+                            "非小细胞肺癌TNM 分期_M 远处转移"
+                        ],
+                        "术前分期": [
+                            "术前临床分期",
+                            "术前TNM 分期_原发肿瘤(T)",
+                            "术前TNM 分期_N 区域淋巴结",
+                            "术前TNM 分期_M 远处转移"
+                        ],
+                        "术后分期": [
+                            "术后病理yp-TNM分期-T分期",
+                            "术后病理yp-TNM分期-N分期",
+                            "术后病理yp-TNM分期-M分期"
+                        ],
+                        "病灶": [
+                            "原发灶部位",
+                            "部位",
+                            "病灶最长径（非淋巴结病灶）",
+                            "病灶直径",
+                            "周围侵蚀部位",
+                            "肿瘤组织部位_PD-L1",
+                            "病理类型",
+                            "病理类型（其它）",
+                            "病理分级"
+                        ],
+                        "手术": [
+                            "实际执行术式",
+                            "手术名称",
+                            "围术期手术日期"
+                        ],
+                        "不良事件": [
+                            "是否发生不良事件",
+                            "不良事件名称"
+                        ],
+                        "后续抗肿瘤药放疗": [
+                            "是否接受抗肿瘤放疗治疗",
+                            "后续抗肿瘤放疗部位",
+                            "后续抗肿瘤放疗单次剂量",
+                            "后续抗肿瘤放疗开始日期"
+                        ],
+                        "抗肿瘤放疗治疗": [
+                            "放疗方案",
+                            "放疗方式",
+                            "放疗剂量",
+                            "放疗单位",
+                            "放疗单位（其它）"
+                        ],
+                        "术后辅助放疗": [
+                            "是否进行术后辅助放疗",
+                            "术后辅助放疗部位",
+                            "术后辅助放疗开始日期"
+                        ],
+                        "后续抗肿瘤药物治疗": [
+                            "是否接受抗肿瘤药物治疗",
+                            "后续抗肿瘤药物治疗方案",
+                            "治疗药物",
+                            "后续抗肿瘤药物单次剂量",
+                            "后续抗肿瘤药物剂量单位",
+                            "后续抗肿瘤药物剂量单位（其它）",
+                            "后续抗肿瘤药物给药途径",
+                            "后续抗肿瘤药物给药途径（其它）",
+                            "给药周期",
+                            "后续抗肿瘤药物治疗开始日期"
+                        ],
+                        "后续抗肿瘤药其它治疗": [
+                            "是否接受抗肿瘤其它治疗",
+                            "后续抗肿瘤其它治疗方案",
+                            "后续抗肿瘤其它治疗开始日期"
+                        ],
+                        "给药记录": [
+                            "输注开始日期",
+                            "化疗药"
+                        ],
+                        "既往抗非小细胞肺癌的治疗": [
+                            "既往是否接受过全身抗非小细胞肺癌的治疗",
+                            "既往的抗肿瘤治疗类型"
+                        ],
+                        "既往及非药物治疗": [
+                            "治疗名称",
+                            "既往及非药物治疗开始日期"
+                        ],
+                        "既往及合并用药": [
+                            "药物名称",
+                            "既往及合并用药开始日期",
+                            "既往及合并用药单次剂量",
+                            "既往及合并用药剂量单位",
+                            "既往及合并用药剂量单位（其它）",
+                            "给药频率",
+                            "既往及合并用药给药频率（其它）",
+                            "既往及合并用药给药途径（其它）"
+                        ],
+                        "PD-L1检测": [
+                            "PD-L1表达",
+                            "PD-L1染色TC（肿瘤细胞阳性比例）",
+                            "PD-L1检测结果是否可评估"
+                        ],
+                        "ALK 基因融合和敏感 EGFR 突变": [
+                            "ALK融合结果",
+                            "是否有敏感EGFR突变"
+                        ]
+                    }
+                },
+                "家族史": {
+                    "entity_inferecne_path": "/home/xuhaitong/projects/temp/transfer_entity2CDEs/data/infrence_data/xk/inference_data/new_inference_data_50/jzs.json",
+                    "need_grouped_cde_dict": {
+                        "家族疾病史组": [
+                            "家族疾病史",
+                            "亲属关系"
+                        ]
+                    }
+                },
+                "诊断": {
+                    "entity_inferecne_path": "/home/xuhaitong/projects/temp/transfer_entity2CDEs/data/infrence_data/xk/inference_data/new_inference_data_50/zd.json",
+                    "need_grouped_cde_dict": {
+                        "组织学分型组": [
+                            "病理类型",
+                            "病理类型（其它）",
+                            "组织学亚型",
+                            "病理分级",
+                            "治疗名称",
+                            "NSCLC 类型",
+                            "NSCLC 类型（其他）",
+                            "肿瘤组织部位_PD-L1",
+                            "部位",
+                            "原发灶部位"
+                        ],
+                        "术后病理TNM": [
+                            "术后病理yp-TNM分期-T分期",
+                            "术后病理yp-TNM分期-N分期",
+                            "术后病理yp-TNM分期-M分期"
+                        ],
+                        "基因突变检测项目": [
+                            "ALK融合结果",
+                            "是否有敏感EGFR突变"
+                        ],
+                        "疾病组": [
+                            "疾病名称",
+                            "是否发生不良事件",
+                            "不良事件名称",
+                            "组织学亚型",
+                            "病理分级",
+                            "NSCLC 类型",
+                            "NSCLC 类型（其他）",
+                            "肿瘤组织部位_PD-L1",
+                            "部位",
+                            "原发灶部位"
+                        ]
+                    }
+                },
+                "病理": {
+                    "entity_inferecne_path": "/home/xuhaitong/projects/temp/transfer_entity2CDEs/data/infrence_data/xk/inference_data/new_inference_data_50/bl.json",
+                    "need_grouped_cde_dict": {
+                        "病灶组": [
+                            "原发灶部位",
+                            "部位",
+                            "病灶直径",
+                            "病灶最长径（非淋巴结病灶）",
+                            "周围侵蚀部位",
+                            "病理分级",
+                            "肿瘤组织部位_PD-L1",
+                            "病理类型",
+                            "病理类型（其它）"
+                        ]
+                    }
+                },
+                "物理检查": {
+                    "entity_inferecne_path": "/home/xuhaitong/projects/temp/transfer_entity2CDEs/data/infrence_data/xk/inference_data/new_inference_data_50/wljc.json",
+                    "need_grouped_cde_dict": {
+                        "病灶组": [
+                            "原发灶部位",
+                            "部位",
+                            "病灶最长径（非淋巴结病灶）",
+                            "病灶直径",
+                            "周围侵蚀部位"
+                        ]
+                    }
+                },
+                "婚育史": {
+                    "entity_inferecne_path": "/home/xuhaitong/projects/temp/transfer_entity2CDEs/data/infrence_data/xk/inference_data/new_inference_data_50/hys.json",
+                    "need_grouped_cde_dict": {}
+                },
+                "个人史": {
+                    "entity_inferecne_path": "/home/xuhaitong/projects/temp/transfer_entity2CDEs/data/infrence_data/xk/inference_data/new_inference_data_50/grs.json",
+                    "need_grouped_cde_dict": {}
+                },
+                "过敏史": {
+                    "entity_inferecne_path": "/home/xuhaitong/projects/temp/transfer_entity2CDEs/data/infrence_data/xk/inference_data/new_inference_data_50/gms.json",
+                    "need_grouped_cde_dict": {}
+                }
+            },
+            "label_mapping_path": "/home/xuhaitong/projects/temp/transfer_entity2CDEs/data/Mapping_file/xk/胸科_标签.csv",
+            "CReDEs_mapping_path": "/home/xuhaitong/projects/temp/transfer_entity2CDEs/data/Mapping_file/xk/胸科ETT1203_remove_unkonwn.csv"
+        },
+        "store_transfer_data_path_dir": "/home/xuhaitong/projects/temp/transfer_CRF/output/xk/test/xk_50_standard_v2_1"
+    }
+}
